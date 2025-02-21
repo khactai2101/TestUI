@@ -6,6 +6,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -13,11 +14,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           crossOrigin="anonymous"
         />
       </head>
-
-
-      <body>
+      <body className="has-background-light " >
         <Navbar />
-        <main className="is-fludid mt-5">{children}</main>
+        <main className="container is-fluid mt-5">{children}</main>
         <Footer />
       </body>
     </html>

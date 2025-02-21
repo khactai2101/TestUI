@@ -53,16 +53,17 @@ export default function Navbar() {
                     className={`navbar-burger ${isActive ? "is-active" : ""}`}
                     aria-label="menu"
                     aria-expanded="false"
-                    onClick={() => setIsActive(!isActive)}
+                    onClick={() => {
+                        setIsActive(!isActive);
+                    }}
                 >
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                 </button>
             </div>
-
             <div className={`navbar-menu ${isActive ? "is-active" : ""}`}>
-                <div className="navbar-start">
+                <div className="navbar-start ">
                     <Link className="navbar-item has-text-weight-bold" href="/">
                         <span className="icon">
                             <i className="fas fa-home"></i>
@@ -108,26 +109,20 @@ export default function Navbar() {
                         <i className="fas fa-book-medical"></i>
                     </span> Config </Link>
                 </div>
-
                 <div className="navbar-end">
-                    <div className="navbar-item has-dropdown ">
-                        <div className="navbar-link has-text-weight-bold" >
+                    <div className="navbar-item is-flex is-align-items-center">
+                        <span className="icon">
+                            <i className="fas fa-user"></i>
+                        </span>
+                        <span className="user-email has-text-weight-bold">{userEmail}</span>
+                        <button className="button is-danger is-small" onClick={handleLogout}>
                             <span className="icon">
-                                <i className="fas fa-user"></i>
+                                <i className="fas fa-sign-out-alt"></i>
                             </span>
-                            {userEmail}
-                            <button className="button is-danger" onClick={handleLogout}>
-                                <span className="icon">
-                                    <i className="fas fa-sign-out-alt"></i>
-                                </span>
-                                <span>Đăng Xuất</span>
-                            </button>
-                        </div>
-
-                        <div className="navbar-dropdown">
-
-                        </div>
+                            <span>Đăng Xuất</span>
+                        </button>
                     </div>
+
                 </div>
             </div>
         </nav>
